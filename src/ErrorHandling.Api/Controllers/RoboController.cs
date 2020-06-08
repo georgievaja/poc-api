@@ -18,6 +18,7 @@ namespace POC.Errors.Controllers
         [HttpGet]
         public IActionResult Get(string roboName)
         {
+            //TODO: I do not especially like this explicit cast..
             var result = _robotService.TryGetRobotCounts(roboName);
 
             if (result.IsRight)
@@ -25,8 +26,7 @@ namespace POC.Errors.Controllers
                 return Ok(result);
             }
 
-            //TODO: I do not especially like this blind cast..
-            return (result as ApiOption<int>).LeftItem;
+            return result.ToApiOption().LeftItem;
         }
     }
 }
