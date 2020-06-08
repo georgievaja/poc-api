@@ -25,7 +25,7 @@ namespace POC.Errors.Controllers
                 return Ok(result);
             }
 
-            //TODO: I do not especially like this blind conversion..
+            //TODO: I do not especially like this blind cast..
             return (result as ApiOption<int>).LeftItem;
         }
     }

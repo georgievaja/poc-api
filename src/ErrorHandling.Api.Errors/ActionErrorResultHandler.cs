@@ -1,7 +1,7 @@
-﻿using ErrorHandling.Api.Errors.Errors;
-using ErrorHandling.Api.Errors.Functors;
+﻿using ErrorHandling.Api.Errors.Functors;
 using ErrorHandling.Contracts;
 using ErrorHandling.Contracts.Types;
+using Microsoft.AspNetCore.Mvc;
 using POC.Errors.Functors;
 
 namespace ErrorHandling.Api.Errors
@@ -10,12 +10,12 @@ namespace ErrorHandling.Api.Errors
     {
         public IOption<TResult> MapResult<TResult>(INotFoundError error)
         {
-            return ApiOption<TResult>.Left(new ApiNotFoundResult());
+            return ApiOption<TResult>.Left(new NotFoundObjectResult(error));
         }
 
         public IOption<TResult> MapResult<TResult>(IBadDataError error)
         {
-            return ApiOption<TResult>.Left(new ApiBadRequestResult());
+            return ApiOption<TResult>.Left(new BadRequestObjectResult(error));
         }
     }
 }
