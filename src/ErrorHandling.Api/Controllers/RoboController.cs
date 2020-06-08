@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ErrorHandling.Api.Errors.Functors;
+using Microsoft.AspNetCore.Mvc;
 using POC.Errors.Services;
 
 namespace POC.Errors.Controllers
@@ -25,7 +26,7 @@ namespace POC.Errors.Controllers
             }
 
             //TODO: I do not especially like this blind conversion..
-            return result.LeftItem as ActionResult;
+            return (result as ApiOption<int>).LeftItem;
         }
     }
 }

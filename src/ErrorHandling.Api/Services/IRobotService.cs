@@ -5,6 +5,6 @@ namespace POC.Errors.Services
 {
     public interface IRobotService
     {
-        Option<int> TryGetRobotCounts(string robotName);
+        IOption<int> TryGetRobotCounts(string robotName);
     }
 }

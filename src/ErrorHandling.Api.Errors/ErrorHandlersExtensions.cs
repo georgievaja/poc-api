@@ -17,7 +17,6 @@ namespace ErrorHandling.Api.Errors
             }
 
             services.AddTransient<IErrorResultHandler, ActionErrorResultHandler>();
-            services.AddTransient<IErrorResultFactory, ActionErrorResultFactory>();
 
             return services;
         }

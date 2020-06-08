@@ -6,21 +6,21 @@ namespace POC.Errors.Services
 {
     public class RobotService : IRobotService
     {
-        private readonly IErrorResultFactory _errorResultFactory;
+        private readonly IErrorResultHandler _errorResultHandler;
 
-        public RobotService(IErrorResultFactory errorResultFactory)
+        public RobotService(IErrorResultHandler errorResultHandler)
         {
-            _errorResultFactory = errorResultFactory;
+            _errorResultHandler = errorResultHandler;
         }
 
-        public Option<int> TryGetRobotCounts(string robotName)
+        public IOption<int> TryGetRobotCounts(string robotName)
         {
             if (string.IsNullOrWhiteSpace(robotName))
             {
-                return _errorResultFactory.CreateBadDataError<int>(new BadDataError("Dark side of your mom", 1));
+                return _errorResultHandler.MapResult<int>(new BadDataError("Dark side of your mom", 1));
             }
 
-            return _errorResultFactory.CreateNotFoundError<int>(new NotFoundError("How is your mom", true));
+            return _errorResultHandler.MapResult<int>(new NotFoundError("How is your mom", true));
         }
     }
 }
