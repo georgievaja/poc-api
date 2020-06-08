@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ErrorHandling.Contracts.Types
 {
-    public interface IBadDataError : IError
+    public interface IBadDataError
     {
         int JokesCount { get; }
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ErrorHandling.Contracts.Types
 {
-    public interface INotFoundError : IError
+    public interface INotFoundError
     {
         bool AreYouRobot { get; }
     }
