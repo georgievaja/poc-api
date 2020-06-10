@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\ErrorHandling.Contracts\ErrorHandling.Contracts.csproj" />
+    <ProjectReference Include="..\ErrorHandling.Contracts\ErrorHandling.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

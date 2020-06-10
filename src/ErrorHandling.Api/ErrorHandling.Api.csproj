@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ErrorHandling.Services\ErrorHandling.Services.csproj" />
     <ProjectReference Include="..\ErrorHandling.Api.Errors\ErrorHandling.Api.ErrorHandling.csproj" />
     <ProjectReference Include="..\ErrorHandling.Contracts\ErrorHandling.Contracts.csproj" />
+    <ProjectReference Include="..\ErrorHandling.Services\ErrorHandling.Services.csproj" />
   </ItemGroup>
 
 

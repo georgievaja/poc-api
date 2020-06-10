@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ErrorHandling.Contracts\ErrorHandling.Contracts.csproj" />
     <ProjectReference Include="..\ErrorHandling.Persistence\ErrorHandling.Persistence.csproj" />
-    <ProjectReference Include="..\src\ErrorHandling.Contracts\ErrorHandling.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
