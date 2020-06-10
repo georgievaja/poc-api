@@ -21,7 +21,7 @@ namespace POC.Errors.Controllers
             return _robotService
                 .TryGetRobot(roboName)
                 .ToApiOption()
-                .SelectResult(right => Ok(right)) ;
+                .SelectResult(right => Ok(right));
         }
     }
 }

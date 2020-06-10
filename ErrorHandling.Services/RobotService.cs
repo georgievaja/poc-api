@@ -26,7 +26,12 @@ namespace POC.Errors.Services
                 return _errorResultHandler.MapResult<Robo>(new BadDataError("Dark side of your mom", 1));
             }
 
-            return _errorResultHandler.MapResult<Robo>(new NotFoundError("How is your mom", true));
+            var result = _robotPersistence.TryGetRobot(robotName);
+            
+            return result.Select(right => new Robo()
+            {
+                Name = right.Name
+            });
         }
     }
 }
