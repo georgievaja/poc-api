@@ -1,4 +1,5 @@
 using ErrorHandling.Api.Errors;
+using ErrorHandling.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +22,7 @@ namespace POC.Errors
         public void ConfigureServices(IServiceCollection services)
         {
             services.UseActionResultErrorHandling();
+            services.AddTransient<IRobotPersistence, RobotPersistence>();
             services.AddTransient<IRobotService, RobotService>();
 
             services.AddControllers();

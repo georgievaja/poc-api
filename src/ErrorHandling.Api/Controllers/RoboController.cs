@@ -18,14 +18,10 @@ namespace POC.Errors.Controllers
         [HttpGet]
         public IActionResult Get(string roboName)
         {
-            var result = _robotService.TryGetRobotCounts(roboName);
-
-            if (result.IsRight)
-            {
-                return Ok(result);
-            }
-
-            return result.ToApiOption().LeftItem;
+            return _robotService
+                .TryGetRobot(roboName)
+                .ToApiOption()
+                .SelectResult(right => Ok(right)) ;
         }
     }
 }
